@@ -86,9 +86,9 @@
         height=6cm,
         aircraft
         ]
-        \addplot [mark=plane] file {python/pos_1.dat};
-        \only<2->{\addplot [no markers] file {python/map.dat};}
-        \only<3->{\addplot [dashed] file {python/dist_1.dat};}
+        \addplot [mark=plane] file {data/pos_1.dat};
+        \only<2->{\addplot [no markers] file {data/map.dat};}
+        \only<3->{\addplot [dashed] file {data/dist_1.dat};}
         \end{axis}
       \end{tikzpicture}
     \end{center}
@@ -159,26 +159,26 @@
         height=6cm,
         aircraft
         ]
-        \addplot [no markers] file {python/map.dat};
+        \addplot [no markers] file {data/map.dat};
         \foreach \i in {1,...,3} {%
           \only<+-+(1)>{%
-            \addplot [mark=plane] file {python/pos_\i.dat};
-            \addplot [dashed] file {python/dist_\i.dat};
-            \addplot [dotted] file {python/level_\i.dat};
+            \addplot [mark=plane] file {data/pos_\i.dat};
+            \addplot [dashed] file {data/dist_\i.dat};
+            \addplot [dotted] file {data/level_\i.dat};
           }
           \only<+(-1)>{%
-            \addplot [particles] file {python/SIS_trans_\i.dat};
+            \addplot [particles] file {data/SIS_trans_\i.dat};
           }
           \only<.>{%
-            \addplot [particles] file {python/SIS_\i.dat};
+            \addplot [particles] file {data/SIS_\i.dat};
           }
         }
-        \foreach \i in {4,...,30} {%
+        \foreach \i in {4,...,90} {%
           \only<+>{%
-            \addplot [mark=plane] file {python/pos_\i.dat};
-            \addplot [dashed] file {python/dist_\i.dat};
-            \addplot [dotted] file {python/level_\i.dat};
-            \addplot [particles] file {python/SIS_\i.dat};
+            \addplot [mark=plane] file {data/pos_\i.dat};
+            \addplot [dashed] file {data/dist_\i.dat};
+            \addplot [dotted] file {data/level_\i.dat};
+            \addplot [particles] file {data/SIS_\i.dat};
           }
         }
       \end{axis}
@@ -194,7 +194,7 @@
       \only<2,5,8>{Weigh samples using observation model}
       \only<3,6,9>{Resample}
       \only<4,7>{Propagate samples using transition model}
-      \only<10->{Propagate, weigh, resample}
+      \only<10->{Propaate, weigh, resample} %TODO FIXME
     \end{overprint}
   \end{center}
 
@@ -205,32 +205,32 @@
         height=6cm,
         aircraft
         ]
-        \addplot [no markers] file {python/map.dat};
+        \addplot [no markers] file {data/map.dat};
         \foreach \i in {1,...,3} {%
           \only<+-+(2)>{%
-            \addplot [mark=plane] file {python/pos_\i.dat};
-            \addplot [dashed] file {python/dist_\i.dat};
-            \addplot [dotted] file {python/level_\i.dat};
+            \addplot [mark=plane] file {data/pos_\i.dat};
+            \addplot [dashed] file {data/dist_\i.dat};
+            \addplot [dotted] file {data/level_\i.dat};
           }
           \only<+(-1)>{%
             \addplot [particles]
-              file {python/BPF_trans_\i.dat};
+              file {data/BPF_trans_\i.dat};
           }
           \only<+(-1)>{%
             \addplot [particles]
-              file {python/BPF_\i.dat};
+              file {data/BPF_\i.dat};
           }
           \only<.>{%
             \addplot [particles]
-              file {python/BPF_resample_\i.dat};
+              file {data/BPF_resample_\i.dat};
           }
         }
-        \foreach \i in {4,...,30} {%
+        \foreach \i in {4,...,90} {%
           \only<+>{%
-            \addplot [mark=plane] file {python/pos_\i.dat};
-            \addplot [dashed] file {python/dist_\i.dat};
-            \addplot [dotted] file {python/level_\i.dat};
-            \addplot [particles] file {python/BPF_resample_\i.dat};
+            \addplot [mark=plane] file {data/pos_\i.dat};
+            \addplot [dashed] file {data/dist_\i.dat};
+            \addplot [dotted] file {data/level_\i.dat};
+            \addplot [particles] file {data/BPF_resample_\i.dat};
           }
         }
       \end{axis}
